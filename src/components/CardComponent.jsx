@@ -3,9 +3,11 @@ import { Card } from 'react-bootstrap';
 
 const CardComponent = ({ title, children }) => {
     return (
-        <Card className="shadow-lg mb-4">
-            {title && <Card.Header as="h5">{title}</Card.Header>}
-            <Card.Body>{children}</Card.Body>
+        <Card className="p-4 border-0 rounded bg-transparent">
+            <Card.Body>
+                <Card.Title className="mb-4 text-center">{title}</Card.Title>
+                {children}
+            </Card.Body>
         </Card>
     );
 };
