@@ -50,20 +50,18 @@ const Login = () => {
                         {error && <Alert variant="danger">{error}</Alert>}
 
                         <Form.Group controlId="formUsername" className="mb-3">
-                            <Form.Label>Username or email</Form.Label>
                             <Form.Control
                                 type="email"
-                                placeholder="Enter your username or email"
+                                placeholder="Username"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 isInvalid={!!error}
                             />
                         </Form.Group>
                         <Form.Group controlId="formPassword" className="mb-3">
-                            <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
-                                placeholder="Enter your password"
+                                placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 isInvalid={!!error}
