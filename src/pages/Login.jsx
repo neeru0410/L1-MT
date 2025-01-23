@@ -9,6 +9,8 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
     const validateCredentials = () => {
         return credentials.some(
             (cred) => cred.email === email && cred.password === password
@@ -19,6 +21,12 @@ const Login = () => {
         e.preventDefault();
         console.log('Form submitted');
         console.log('Email:', email, 'Password:', password);
+
+        // Password validation check
+        if (!passwordPattern.test(password)) {
+            setError('Password must be at least 8 characters long, include at least one uppercase letter, one number, and one symbol.');
+            return;
+        }
 
         if (!validateCredentials()) {
             console.log('Invalid credentials');
