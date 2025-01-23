@@ -41,7 +41,7 @@ const Login = () => {
             <Row className="w-100 align-items-center">
                 {/* Login Form Section */}
                 <Col md={6} className="d-flex flex-column justify-content-center">
-                    <h2 className="mb-4">Sign In</h2>
+                    <h2 className="mt-5 mb-4">Sign In</h2>
                     <p>
                         New user? <a href="#">Create an account</a>
                     </p>
