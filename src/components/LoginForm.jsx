@@ -30,6 +30,7 @@ const LoginForm = () => {
     return (
         <CardComponent title="Sign In">
             <form onSubmit={handleSubmit}>
+                {/* Username/Email Field */}
                 <InputField
                     label="Username or Email"
                     type="email"
@@ -38,6 +39,8 @@ const LoginForm = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     isInvalid={!!error}
                 />
+                
+                {/* Password Field */}
                 <InputField
                     label="Password"
                     type="password"
@@ -47,10 +50,31 @@ const LoginForm = () => {
                     isInvalid={!!error}
                     errorMessage={error}
                 />
-                <ButtonComponent variant="primary" type="submit">
+                
+                {/* Submit Button */}
+                <ButtonComponent variant="primary" type="submit" className="w-100 mt-3">
                     Sign In
                 </ButtonComponent>
             </form>
+
+            {/* Additional Links */}
+            <div className="mt-4 text-center">
+                <small>
+                    New user? <a href="#">Create an account</a>
+                </small>
+                <div className="mt-2">Or Sign In With</div>
+                <div className="d-flex justify-content-center gap-3 mt-3">
+                    <ButtonComponent variant="outline-secondary" className="rounded-circle">
+                        <i className="bi bi-google"></i>
+                    </ButtonComponent>
+                    <ButtonComponent variant="outline-secondary" className="rounded-circle">
+                        <i className="bi bi-facebook"></i>
+                    </ButtonComponent>
+                    <ButtonComponent variant="outline-secondary" className="rounded-circle">
+                        <i className="bi bi-twitter"></i>
+                    </ButtonComponent>
+                </div>
+            </div>
         </CardComponent>
     );
 };
