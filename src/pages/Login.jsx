@@ -19,8 +19,6 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form submitted');
-        console.log('Email:', email, 'Password:', password);
 
         // Password validation check
         if (!passwordPattern.test(password)) {
@@ -29,13 +27,12 @@ const Login = () => {
         }
 
         if (!validateCredentials()) {
-            console.log('Invalid credentials');
             setError('Invalid email or password.');
             return;
         }
 
-        console.log('Valid credentials');
         setError('');
+        localStorage.setItem('isAuthenticated', 'true');
         navigate('/home'); // Redirect to /home
     };
 
